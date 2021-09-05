@@ -1,0 +1,17 @@
+version: "3.1"
+
+services:
+  db:
+    image: postgres:13
+    restart: always
+    environment:
+      POSTGRES_USER: myself
+      POSTGRES_PASSWORD: prismaiscool
+      POSTGRES_DB: awesome-link
+    ports:
+      - "5432:5432"
+    volumes:
+      - awesome-db-data:/var/lib/postgresql/data/
+
+volumes:
+  awesome-db-data:
